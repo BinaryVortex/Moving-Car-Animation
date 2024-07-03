@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: rgb(210, 222, 231);
+    }
+    /* Define the car with a period (.) to indicate it's a class */
+    .car {
+      position: absolute;
+      width: 250px;
+      height: 150px;
+      background: url('./car.png') no-repeat;
+      background-size: 100% 100%;
+      animation: moveCar 8s linear infinite;
+    }
+
+    /* Define the animation */
+    @keyframes moveCar {
+      0% {
+        left: -100px; /* Start from the left of the viewport */
+      }
+      100% {
+        left: 80%; /* Move to the right of the viewport */
+      }
+    }
+
+    .road {
+      position: absolute;
+      width: 100%;
+      height: 150px; /* Increase the height for a more pronounced road */
+      background: black; /* Set a gray color for the road */
+    }
+
+    /* Add road markings */
+    .road::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      background: #fff; /* Set a white color for the road markings */
+      top: 50%; /* Adjust the vertical position of the markings */
+      transform: translateY(-50%);
+    }
+
+    .sky{
+        width: 100%;
+        height: 200px;
+        background-color: skyblue;
+    }
+    .garden{
+        width: 100%;
+        height: 71vh;
+        background-color: green;
+    }
+    h1{
+        color: black;
+        position: absolute;
+        top: 50px;
+        left: 230px;
+        font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+    <div class="sky">
+        <h1>Design a running car animation using HTML and CSS</h1>
+    </div>
+  <div class="road"></div>
+  <div class="car"></div>
+  <div class="garden"></div>
+</body>
+</html>
